@@ -7,22 +7,32 @@ import IndividualMain from "./pages/blogs/blogindividual/Main"
 import ContactMain from "./pages/contact/Main"
 import Services from "./pages/services/Main"
 import ServiceDetail from "./pages/services/serviceIndividual/Main"
+import ScrollToTop from "./components/layout/ScrollToTop"
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />} >
-        <Route index element={<HomeMain />} />
-        <Route path="/aboutus" element={<AboutMain />} />
-        <Route path="/blogs" element={<BlogMain />} />
-        <Route path="/contactus" element={<ContactMain />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/blog/:slug" element={<IndividualMain />} />
-        <Route path="/services/:slug" element={<ServiceDetail />} />
+    <>
+      <ScrollToTop />
+      <Routes>
 
-      </Route>
+        <Route path="/" element={<Layout />} >
+          <Route index element={<HomeMain />} />
+          <Route path="/aboutus" element={<AboutMain />} />
+          <Route path="/blogs" element={<BlogMain />} />
+          <Route path="/contactus" element={<ContactMain />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/blog/:slug" element={<IndividualMain />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+
+        </Route>
 
 
-    </Routes>
+
+
+
+      </Routes>
+
+    </>
+
   )
 }

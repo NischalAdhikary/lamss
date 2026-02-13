@@ -1,5 +1,6 @@
 
 import RouteHero from '@/components/layout/HeroPage'
+import SEO from '@/components/layout/Seo'
 import { blogs } from '@/data/blogs'
 import { useParams, NavLink, Link } from 'react-router-dom'
 
@@ -41,6 +42,12 @@ export default function IndividualMain() {
 
     return (
         <>
+            <SEO
+                title={`${blog.title} - LAMSS Blog`}
+                description={blog.description.slice(0, 150)}
+                keywords={`LAMSS, blog, translation, interpretation, subtitling, ${blog.author}`}
+                image={blog.image || '/lamss1.png'}
+            />
             <RouteHero data={data} />
 
 
@@ -50,7 +57,7 @@ export default function IndividualMain() {
                     <div className="absolute top-0 right-0 w-96 h-96 bg-(--primary-bg) opacity-5 rounded-full blur-3xl -z-10"></div>
                     <div className="absolute bottom-0 left-0 w-80 h-80 bg-(--secondary-bg) opacity-5 rounded-full blur-3xl -z-10"></div>
 
-                    {/* Meta Info */}
+
                     <div className="mb-8 flex  flex-wrap items-center gap-4 text-sm">
                         <span className="bg-(--primary-bg) text-(--secondary-bg) px-4 py-2 rounded-lg font-semibold">
                             {formatDate(blog.createdAt)}

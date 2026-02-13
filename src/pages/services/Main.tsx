@@ -3,6 +3,7 @@ import RouteHero from '@/components/layout/HeroPage'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Globe, FileText, Mic } from 'lucide-react'
 import type { FC } from 'react'
+import SEO from '@/components/layout/Seo'
 interface Service {
     icon: FC<React.SVGProps<SVGSVGElement>>
     title: string
@@ -14,7 +15,7 @@ interface Service {
 export default function Services() {
     const heroData = {
         title: 'Our Services',
-        image: '/images/services-hero.jpg',
+        image: '/lamss1.png',
         route: true
     }
 
@@ -47,6 +48,12 @@ export default function Services() {
 
     return (
         <>
+            <SEO
+                title="LAMSS Services - Translation, Interpretation & Subtitling"
+                description="LAMSS offers professional translation, interpretation, transcription, and subtitling services in Nepali, English, Hindi, and other local languages. We ensure high-quality, reliable language services for individuals, organizations, and development agencies in Nepal."
+                keywords="LAMSS, translation services, interpretation, transcription, subtitling, Nepali, English, Hindi, language services, Nepal"
+                image="https://via.placeholder.com/1200x630.png?text=LAMSS+Services"
+            />
             <RouteHero data={heroData} />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -187,13 +194,13 @@ export default function Services() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Link
-                            to="/contact"
+                            to="/contactus"
                             className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                         >
                             Request a Quote
                         </Link>
                         <a
-                            href="tel:+977XXXXXXXX"
+                            href="tel:+977981464166"
                             className="px-8 py-4 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
                         >
                             Call Us Now

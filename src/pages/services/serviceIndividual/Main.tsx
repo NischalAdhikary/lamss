@@ -2,6 +2,7 @@ import RouteHero from '@/components/layout/HeroPage'
 import { services } from '@/data/services'
 import { useParams, Link } from 'react-router-dom'
 import { CheckCircle, Globe, Award, FileText } from 'lucide-react'
+import SEO from '@/components/layout/Seo'
 
 export default function ServiceDetail() {
     const { slug } = useParams()
@@ -31,6 +32,14 @@ export default function ServiceDetail() {
 
     return (
         <>
+            <SEO
+                title={`${service.title} - LAMSS Services`}
+                description={service.shortDescription || service.fullDescription.slice(0, 150)}
+                keywords={`LAMSS, ${service.title}, translation, interpretation, subtitling`}
+                image={service.image || '/lamss1.png'}
+
+            />
+
             <RouteHero data={data} />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -157,7 +166,7 @@ export default function ServiceDetail() {
                                         Contact Us
                                     </Link>
                                     <a
-                                        href="tel:+977XXXXXXXX"
+                                        href="tel:+977981464166"
                                         className="block w-full bg-blue-700 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors"
                                     >
                                         Call Us Now

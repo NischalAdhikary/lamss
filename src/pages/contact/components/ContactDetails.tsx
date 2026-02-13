@@ -3,8 +3,8 @@ import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function Contactinfoup() {
     const address = "Kathmandu, Nepal";
-    const email = "info@lamss.com";
-    const contactNumber = "+977-9800000000";
+    const email = "admin@lamss.org";
+    const contactNumber = "+977981464166";
 
     return (
         <div className="flex flex-col gap-6 text-black">

@@ -98,8 +98,9 @@
 //     )
 // }
 import { Mail, Phone } from "lucide-react"
+
+import { Link, useNavigate } from "react-router-dom"
 import { Button } from "../ui/button"
-import { Link } from "react-router-dom"
 
 
 const NavLinks = [
@@ -110,6 +111,7 @@ const NavLinks = [
 ]
 
 export default function Footer() {
+    const navigate = useNavigate()
     return (
         <footer className="relative bg-(--secondary-bg) dark:bg-background text-white overflow-hidden">
 
@@ -135,8 +137,8 @@ export default function Footer() {
                                 Your trusted partner in modern communication solutions.
                             </p>
                         </div>
-
                         <Button
+                            onClick={() => navigate('/contactus')}
                             className="group bg-(--primary-bg) hover:bg-(--primary-bg)/90 text-(--secondary-bg) font-semibold px-8 py-6 rounded-lg shadow-lg shadow-(--primary-bg)/20 transition-all duration-300 hover:shadow-xl hover:shadow-(--primary-bg)/30 hover:scale-105"
                         >
                             Contact Us
@@ -149,6 +151,8 @@ export default function Footer() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                         </Button>
+
+
                     </div>
 
 
@@ -174,7 +178,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Contact Links */}
+
                     <div className="md:col-span-4 md:col-start-10">
                         <h3 className="text-sm font-semibold uppercase tracking-wider text-(--primary-bg) mb-6">
                             Contact Links
@@ -182,24 +186,24 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li className="group">
                                 <a
-                                    href="mailto:abc@gmail.com"
+                                    href="mailto:admin@lamss.org"
                                     className="flex items-center gap-3 text-white/80 hover:text-white transition-colors duration-200"
                                 >
                                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 group-hover:bg-(--primary-bg) border border-white/20 group-hover:border-(--primary-bg) transition-all duration-300 group-hover:scale-110">
                                         <Mail className="w-4 h-4 group-hover:text-(--secondary-bg)" />
                                     </div>
-                                    <span className="text-sm">abc@gmail.com</span>
+                                    <span className="text-sm">admin@lamss.org</span>
                                 </a>
                             </li>
                             <li className="group">
                                 <a
-                                    href="tel:9800000000"
+                                    href="tel:+977981464166"
                                     className="flex items-center gap-3 text-white/80 hover:text-white transition-colors duration-200"
                                 >
                                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 group-hover:bg-(--primary-bg) border border-white/20 group-hover:border-(--primary-bg) transition-all duration-300 group-hover:scale-110">
                                         <Phone className="w-4 h-4 group-hover:text-(--secondary-bg)" />
                                     </div>
-                                    <span className="text-sm">9800000000</span>
+                                    <span className="text-sm">+977-981464166</span>
                                 </a>
                             </li>
                         </ul>

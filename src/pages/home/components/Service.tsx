@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FileText, Globe, Mic, Settings } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const services = [
     {
@@ -44,6 +45,7 @@ const services = [
 ];
 
 export default function Service() {
+    const navigate = useNavigate()
     return (
         <div className="w-full relative py-8 md:py-16">
 
@@ -60,6 +62,7 @@ export default function Service() {
                 <div className="grid  grid-cols-1 mb-12 sm:grid-cols-2 md:grid-cols-4 lg:gird-cols-4 gap-4">
                     {
                         services.map((s) =>
+
                             <Card className={`group dark:bg-card border-t-4 border-(--secondary-bg) bg-(--secondary-bg) hover:bg-(--primary-bg)  transition duration-100 ease-in hover:-translate-y-2`} key={s.id}>
                                 <CardContent className="space-y-4 ">
                                     <div className="w-16 h-16 bg-red-100 group-hover:bg-white rounded-lg flex items-center justify-center">
@@ -79,7 +82,7 @@ export default function Service() {
 
                 </div>
                 <div className="flex items-center justify-center">
-                    <Button variant={'outline'} >
+                    <Button variant={'outline'} onClick={() => navigate('/services')}  >
                         View All Services
                     </Button>
                 </div>
